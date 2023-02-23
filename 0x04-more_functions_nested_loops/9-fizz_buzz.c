@@ -26,8 +26,11 @@ int main(void)
 		}
 		else
 		{
-			printf(" %i", i);
+			printf("%i", i);
 		}
+		if (i == 100)
+			break;
+		printf(" ");
 	}
 	printf("\n");
 	return (0);
