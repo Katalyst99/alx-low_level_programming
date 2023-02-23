@@ -29,7 +29,7 @@ int main(void)
 			printf("%i", i);
 		}
 		if (i == 100)
-			break;
+			continue;
 		printf(" ");
 	}
 	printf("\n");
