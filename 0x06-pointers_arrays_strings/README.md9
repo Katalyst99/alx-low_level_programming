@@ -1,0 +1,5 @@
+ a function that prints an integer.
+can only use _putchar function to print
+ not allowed to use long
+ not allowed to use arrays or pointer
+ not allowed to hard-code special values
