@@ -12,7 +12,7 @@ char *str_concat(char *s1, char *s2)
 {
 	char *catstr;
 
-	unsigned int i, j, k;
+	unsigned int i, j = 0, k = 0;
 
 	if (s1 == NULL)
 	{
@@ -25,7 +25,6 @@ char *str_concat(char *s1, char *s2)
 
 	for (i = 0; s1[i] || s2[i]; i++)
 	{
-		j = 0;
 		j++;
 	}
 
@@ -35,7 +34,7 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-	k = 0;
+
 	for (i = 0; s1[i]; i++)
 	{
 		catstr[k++] = s1[i];
