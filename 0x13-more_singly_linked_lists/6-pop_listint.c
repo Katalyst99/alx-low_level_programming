@@ -17,11 +17,10 @@ int pop_listint(listint_t **head)
 	}
 	else
 	{
-		temp = *head;
-		*head = (*head)->next;
-		data = (*head)->n;
-		free(temp);
-		temp = NULL;
+	temp = *head;
+	data = (*head)->n;
+	*head = (*head)->next;
+	free(temp);
 	}
 	return (data);
 }
