@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "main.h"
 #include <stdlib.h>
 
 /**
@@ -23,5 +22,6 @@ int main(int argc, char *argv[])
 	mul = x * y;
 
 	printf("%i\n", mul);
+
 	return (0);
 }
