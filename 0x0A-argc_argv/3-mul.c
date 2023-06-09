@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * main - program that multiplies two numbers.
@@ -23,9 +24,4 @@ int main(int argc, char *argv[])
 
 	printf("%i\n", mul);
 	return (0);
-
-
-
-
-
 }
