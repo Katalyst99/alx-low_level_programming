@@ -27,26 +27,20 @@ int _isdigit(int c)
  */
 int main(int argc, char *argv[])
 {
-	int i, sum = 0;
+	int i, n, sum = 0;
 
-	if (argc == 1)
+	for (n = 1; n < argc; n++)
 	{
-		printf("0\n");
-		return (0);
-	}
-
-	for (i = 1; i < argc; i++)
-	{
-		if (!_isdigit(argv[i][0]))
+		for (i = 0; argv[n][i]; i++)
 		{
-			printf("Error\n");
-			return (1);
+			if (!_isdigit(argv[n][i]))
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-
-		sum += atoi(argv[i]);
+		sum += atoi(argv[n]);
 	}
-
 	printf("%d\n", sum);
-
 	return (0);
 }
