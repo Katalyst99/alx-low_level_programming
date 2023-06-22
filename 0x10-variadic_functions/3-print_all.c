@@ -44,10 +44,7 @@ void print_s(va_list ap)
 		printf("(nil)");
 		return;
 	}
-	else
-	{
 		printf("%s", s);
-	}
 }
 
 /**
