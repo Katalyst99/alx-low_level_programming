@@ -9,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	char buffer[BUFSIZ];
+	char buffer[1024];
 	int fdf, fdt, r, wr, ct, cf;
 
 	if (argc != 3)
@@ -23,13 +23,13 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[1]);
 		exit(98);
 	}
-	fdt = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	fdt = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 0664);
 	if (fdt == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
-	while ((r = read(fdf, buffer, BUFSIZ)) > 0)
+	while ((r = read(fdf, buffer, sizeof(buffer))) > 0)
 	{
 		wr = write(fdt, buffer, r);
-		if (wr != r)
+		if (wr == -1)
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 	}
 	if (r == -1)
