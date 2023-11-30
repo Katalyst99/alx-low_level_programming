@@ -15,12 +15,6 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	}
 
-	o = open(filename, O_CREAT | O_TRUNC | O_WRONLY, 0600);
-	if (o == -1)
-	{
-		return (-1);
-	}
-
 	if (text_content != NULL)
 	{
 		while (text_content[len])
@@ -30,8 +24,9 @@ int create_file(const char *filename, char *text_content)
 	}
 	else
 	{
+		o = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0600);
 		wr = write(o, text_content, len);
-		if (wr == -1)
+		if (wr == -1 || o == -1)
 		{
 			return (-1);
 		}
