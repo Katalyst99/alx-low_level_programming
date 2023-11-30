@@ -21,9 +21,12 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 	}
 
-	while (text_content[len])
+	if (text_content != NULL)
 	{
-		len++;
+		while (text_content[len])
+		{
+			len++;
+		}
 	}
 
 	wr = write(o, text_content, len);
