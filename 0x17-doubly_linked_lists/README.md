@@ -57,3 +57,11 @@ Write a function that deletes the node at index index of a dlistint_t linked lis
 Prototype: int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
 where index is the index of the node that should be deleted. Index starts at 0
 Returns: 1 if it succeeded, -1 if it failed
+
+10. Palindromes:
+A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+
+Find the largest palindrome made from the product of two 3-digit numbers.
+
+Save the result in the file 102-result
+Your file should contain the exact result, no new line, no extra space
